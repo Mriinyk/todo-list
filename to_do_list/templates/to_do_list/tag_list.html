@@ -1,0 +1,37 @@
+{% extends "to_do_list/base.html" %}
+
+{% block title %}Tags{% endblock %}
+
+{% block content %}
+<header class="page-heading">
+  <h1>Tags</h1>
+  <a class="btn btn-primary btn-lg" href="{% url 'to_do_list:tag-create' %}">Add</a>
+</header>
+
+<section class="tag-list" aria-label="Tags">
+  <div class="table-responsive">
+    <table class="table tag-table align-middle mb-0">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Update</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for tag in tags %}
+        <tr>
+          <td>{{ tag.name }}</td>
+          <td><a class="btn btn-secondary btn-lg" href="{% url 'to_do_list:tag-update' tag.pk %}">Update</a></td>
+          <td><a class="btn btn-secondary btn-lg" href="{% url 'to_do_list:tag-delete' tag.pk %}">Delete</a></td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="3" class="empty-state">No tags yet. Add a tag to organize related tasks.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}
