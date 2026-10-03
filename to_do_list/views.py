@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, redirect, render
 
-from .forms import TagForm, TaskForm
-from .models import Tag, Task
+from to_do_list.forms import TagForm, TaskForm
+from to_do_list.models import Tag, Task
 
 
 def task_list(request):

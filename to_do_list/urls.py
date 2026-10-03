@@ -1,6 +1,6 @@
 from django.urls import path
 
-from . import views
+from to_do_list import views
 
 app_name = "to_do_list"
 

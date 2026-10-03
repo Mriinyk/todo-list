@@ -17,6 +17,13 @@ Activate the virtual environment, then install dependencies and initialize the d
 
 ```bash
 python -m pip install -r requirements.txt
+```
+
+Copy `.env.example` to `.env` and replace `SECRET_KEY` with a private random value. Keep `.env` out of version control.
+
+Then initialize the database and start the development server:
+
+```bash
 python manage.py migrate
 python manage.py runserver
 ```

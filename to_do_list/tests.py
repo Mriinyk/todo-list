@@ -4,7 +4,7 @@ from django.test import TestCase
 from django.urls import reverse
 from django.utils import timezone
 
-from .models import Tag, Task
+from to_do_list.models import Tag, Task
 
 
 class TodoListTests(TestCase):
